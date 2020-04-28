@@ -1,5 +1,7 @@
 # PSDynamoDB
-A quick and dirty PowerShell module to talk to Amazon's DynamoDBs
+A quick and dirty PowerShell module to talk to Amazon's DynamoDBs.
+
+It is possible to update items in AWS' DynamoDB with PowerShell! Check it out:
 
 ## Prerequisites
 Make sure you have the [AWS PowerShell module](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-welcome.html) installed. At least the AWS.Tools module with DynamoDBv2.
