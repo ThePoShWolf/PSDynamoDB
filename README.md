@@ -37,7 +37,12 @@ Initialize-DdbClient -TableName 'TableName'
 Create a new item:
 
 ```powershell
-New-DdbTableItem @{'FirstName'='Anthony';'LastName'='Howell';Data = '{"PowerShell":true,"OnTwitter":"@theposhwolf"}'}
+New-DdbTableItem @{
+    'FirstName' = 'Anthony'
+    'LastName'  = 'Howell'
+    'Language'  = 'PowerShell'
+    'OnTwitter' = '@theposhwolf'
+}
 ```
 
 Get that item:
