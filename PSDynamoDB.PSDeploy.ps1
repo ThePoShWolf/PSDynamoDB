@@ -1,6 +1,6 @@
-Deploy "$($MyInvocation.MyCommand.Name.Split('.')[0])" {
+Deploy "PSDynamoDB" {
     By PSGalleryModule {
-        FromSource "Build\$($MyInvocation.MyCommand.Name.Split('.')[0])"
+        FromSource "Build\PSDynamoDB"
         To PSGallery
         WithOptions @{
             ApiKey = ''
