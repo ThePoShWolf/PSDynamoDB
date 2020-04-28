@@ -35,7 +35,15 @@ Function Get-DdbTableItem {
             $task = $table.GetItemAsync([Amazon.DynamoDBv2.DocumentModel.Primitive]::new($HashKey))
         }
         $task.Wait()
-        $task.Result
+        $htArr = $task.Result
+        $ht = @{}
+        foreach ($item in $htArr) {
+            $ht[$item.Key] = switch ($item.Value.Type) {
+                'Numeric' { [int]$item.Value.Value }
+                default { $item.Value.Value }
+            }
+        }
+        $ht
     } else {
         # Find the name of the hashkey
         $hashKeyName = ($table.GlobalSecondaryIndexes[$IndexName].KeySchema | ?{$_.KeyType -eq 'HASH'}).AttributeName
