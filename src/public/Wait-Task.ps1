@@ -8,6 +8,6 @@ function Wait-Task {
 
     process {
         while (-not $task.AsyncWaitHandle.WaitOne(100)) { }
-        $task.GetAwaiter().GetResult()
+        return $task.GetAwaiter().GetResult()
     }
 }
